@@ -7,7 +7,7 @@ export function Footer() {
         </span>
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com/dep-trust/dep-trust"
+            href="https://github.com/salarkhannn/dep-trust"
             className="font-mono text-[11px] uppercase tracking-[0.06em] text-text-secondary hover:text-text-primary transition-colors duration-200"
           >
             GitHub

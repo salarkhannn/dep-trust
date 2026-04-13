@@ -23,7 +23,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex items-center gap-6">
             <a
-              href="https://github.com/dep-trust/dep-trust"
+              href="https://github.com/salarkhannn/dep-trust"
               className="inline-flex font-mono text-[13px] uppercase tracking-[0.06em] px-6 py-2.5 border border-border-visible text-text-primary rounded-full hover:text-text-display hover:border-text-display transition-colors duration-200"
             >
               View on GitHub
