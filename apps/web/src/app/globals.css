@@ -1,20 +1,34 @@
 @import 'tailwindcss';
 
 @theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #0f0f0f;
-  --color-muted: #6b6b6b;
-  --color-border: #e5e5e5;
-  --color-accent: #b91c1c;
-  --color-accent-hover: #991b1b;
-  --color-terminal-bg: #1a1a1a;
-  --color-terminal-text: #d4d4d4;
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --color-black: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F0F0F0;
+  --color-border: #E8E8E8;
+  --color-border-visible: #CCCCCC;
+  --color-text-disabled: #999999;
+  --color-text-secondary: #666666;
+  --color-text-primary: #1A1A1A;
+  --color-text-display: #000000;
+  --color-accent: #D71921;
+  --color-accent-subtle: rgba(215, 25, 33, 0.15);
+  --color-success: #4A9E5C;
+  --color-warning: #D4A843;
+  --color-interactive: #007AFF;
+  --color-terminal-bg: #111111;
+  --color-terminal-surface: #1A1A1A;
+  --color-terminal-border: #222222;
+  --color-terminal-text: #E8E8E8;
+  --color-terminal-dim: #666666;
+  --color-terminal-display: #FFFFFF;
+  --font-display: var(--font-doto);
+  --font-body: var(--font-space-grotesk);
+  --font-mono: var(--font-space-mono);
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: var(--color-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }

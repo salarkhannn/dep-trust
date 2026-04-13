@@ -12,23 +12,23 @@ export function Nav() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="/" className="font-mono font-bold text-sm tracking-tight">
+        <a href="/" className="font-display font-bold text-sm tracking-tight text-text-display">
           dep-trust
         </a>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           <a
             href="https://github.com/dep-trust/dep-trust"
-            className="text-sm text-muted hover:text-foreground transition-colors"
+            className="font-mono text-[11px] uppercase tracking-[0.06em] text-text-secondary hover:text-text-primary transition-colors duration-200"
           >
             GitHub
           </a>
           <button
             onClick={copyInstall}
-            className="text-sm font-mono px-3 py-1.5 bg-foreground text-white rounded hover:bg-foreground/90 transition-colors cursor-pointer"
+            className="font-mono text-[13px] uppercase tracking-[0.06em] px-6 py-2.5 bg-text-display text-black rounded-full hover:opacity-90 transition-opacity duration-200 cursor-pointer"
           >
-            {copied ? 'copied!' : 'npm install dep-trust'}
+            {copied ? '[COPIED]' : 'npm install dep-trust'}
           </button>
         </div>
       </div>

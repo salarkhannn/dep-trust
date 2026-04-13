@@ -16,29 +16,32 @@ export default function OgImage() {
           alignItems: 'flex-start',
           width: '100%',
           height: '100%',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#F5F5F5',
           padding: '80px',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: '24px',
             fontFamily: 'monospace',
-            fontWeight: 700,
-            color: '#0f0f0f',
-            marginBottom: '40px',
+            fontSize: '11px',
+            fontWeight: 400,
+            color: '#666666',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            marginBottom: '24px',
           }}
         >
-          dep-trust
+          npm supply chain protection
         </div>
         <div
           style={{
             display: 'flex',
             fontSize: '56px',
             fontWeight: 700,
-            color: '#0f0f0f',
-            lineHeight: 1.15,
+            color: '#000000',
+            lineHeight: 1.05,
+            letterSpacing: '-0.02em',
             maxWidth: '800px',
           }}
         >
@@ -47,14 +50,17 @@ export default function OgImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: '22px',
-            color: '#6b6b6b',
-            marginTop: '24px',
-            maxWidth: '700px',
-            lineHeight: 1.5,
+            fontFamily: 'monospace',
+            fontSize: '24px',
+            fontWeight: 700,
+            color: '#000000',
+            letterSpacing: '-0.02em',
+            position: 'absolute',
+            top: '80px',
+            right: '80px',
           }}
         >
-          Scan your npm dependency tree for supply chain attack indicators.
+          dep-trust
         </div>
         <div
           style={{
@@ -62,9 +68,11 @@ export default function OgImage() {
             position: 'absolute',
             bottom: '80px',
             left: '80px',
-            fontSize: '18px',
             fontFamily: 'monospace',
-            color: '#b91c1c',
+            fontSize: '13px',
+            color: '#D71921',
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
           }}
         >
           npm install -g dep-trust

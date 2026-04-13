@@ -18,16 +18,18 @@ export function CopyBlock({ code, label }: CopyBlockProps) {
 
   return (
     <div>
-      <p className="text-xs text-muted mb-2 uppercase tracking-wide font-medium">{label}</p>
+      <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-3">
+        {label}
+      </p>
       <div className="relative group">
-        <pre className="font-mono text-sm bg-terminal-bg text-terminal-text rounded-lg px-5 py-4 overflow-x-auto">
+        <pre className="font-mono text-sm bg-terminal-bg text-terminal-text rounded-lg border border-terminal-border px-5 py-4 overflow-x-auto">
           {code}
         </pre>
         <button
           onClick={copy}
-          className="absolute top-3 right-3 text-xs text-terminal-text/50 hover:text-terminal-text transition-colors font-mono cursor-pointer"
+          className="absolute top-3 right-3 font-mono text-[11px] uppercase tracking-[0.06em] text-terminal-dim hover:text-terminal-text transition-colors duration-200 cursor-pointer"
         >
-          {copied ? 'copied' : 'copy'}
+          {copied ? '[COPIED]' : '[COPY]'}
         </button>
       </div>
     </div>

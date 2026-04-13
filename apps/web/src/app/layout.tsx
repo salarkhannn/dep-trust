@@ -1,15 +1,23 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Doto, Space_Grotesk, Space_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
-  variable: '--font-inter',
+const doto = Doto({
+  variable: '--font-doto',
   subsets: ['latin'],
+  weight: ['400', '700'],
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+})
+
+const spaceMono = Space_Mono({
+  variable: '--font-space-mono',
+  subsets: ['latin'],
+  weight: ['400', '700'],
 })
 
 export const metadata: Metadata = {
@@ -30,7 +38,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${doto.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
+    >
       <body>{children}</body>
     </html>
   )

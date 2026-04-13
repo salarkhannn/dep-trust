@@ -9,89 +9,99 @@ export default function Home() {
       <Nav />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="px-6 pt-28 pb-20 max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
-            Know what your
-            <br />
-            dependencies are doing.
+        {/* Hero — Primary layer: Doto display, one strong statement */}
+        <section className="px-6 pt-32 pb-24 max-w-3xl mx-auto">
+          <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-6">
+            npm supply chain protection
+          </p>
+          <h1 className="font-display text-5xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-text-display">
+            Know what your dependencies are doing.
           </h1>
-          <p className="mt-6 text-lg text-muted max-w-xl leading-relaxed">
+          <p className="mt-8 text-lg text-text-secondary max-w-xl leading-relaxed">
             dep-trust scans your npm dependency tree for supply chain attack indicators — recently
             published packages, suspicious install scripts, and unexpected lockfile changes.
           </p>
-          <div className="mt-8">
+          <div className="mt-10 flex items-center gap-6">
             <a
               href="https://github.com/dep-trust/dep-trust"
-              className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+              className="inline-flex font-mono text-[13px] uppercase tracking-[0.06em] px-6 py-2.5 border border-border-visible text-text-primary rounded-full hover:text-text-display hover:border-text-display transition-colors duration-200"
             >
-              View on GitHub →
+              View on GitHub
             </a>
           </div>
-          <div className="mt-12">
+          <div className="mt-16">
             <Terminal />
           </div>
         </section>
 
-        {/* Problem */}
-        <section className="px-6 py-20 border-t border-border">
+        {/* Problem — Secondary layer: Space Grotesk body text */}
+        <section className="px-6 py-24 border-t border-border">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold tracking-tight">The problem</h2>
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-muted">
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-4">
+              The problem
+            </p>
+            <h2 className="font-body text-2xl font-medium tracking-tight text-text-display">
+              npm audit checks for CVEs. It doesn&apos;t check for hijacked packages.
+            </h2>
+            <div className="mt-10 space-y-6 text-base leading-relaxed text-text-secondary">
               <p>
-                npm supply chain attacks work by publishing compromised versions of popular packages.
+                Supply chain attacks work by publishing compromised versions of popular packages.
                 The attacker gains access to a maintainer account, pushes a malicious patch, and
                 every downstream project that installs or updates inherits the payload. The attack
                 window is typically hours — not days.
               </p>
               <p>
-                <span className="text-foreground font-medium">npm audit doesn&apos;t catch this.</span>{' '}
-                It checks for known CVEs, not for packages that were published suspiciously recently,
-                or for install scripts that run arbitrary code during{' '}
-                <code className="font-mono text-sm bg-gray-100 px-1.5 py-0.5 rounded">
-                  npm install
-                </code>
-                .
-              </p>
-              <p>
                 dep-trust fills the gap. It flags freshly published dependencies, detects install
-                hook scripts, and diffs your lockfile against a known-good snapshot to surface
-                unexpected changes before they reach production.
+                hook scripts that run arbitrary code during{' '}
+                <code className="font-mono text-[13px] text-text-primary">npm install</code>, and
+                diffs your lockfile against a known-good snapshot to surface unexpected changes
+                before they reach production.
               </p>
             </div>
           </div>
         </section>
 
-        {/* How it works */}
-        <section className="px-6 py-20 border-t border-border">
+        {/* How it works — Three numbered steps, Space Mono numbers as accent */}
+        <section className="px-6 py-24 border-t border-border">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold tracking-tight">How it works</h2>
-            <ol className="mt-10 space-y-8">
-              <li className="flex gap-5">
-                <span className="text-sm font-mono font-bold text-accent mt-0.5">01</span>
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-4">
+              How it works
+            </p>
+            <h2 className="font-body text-2xl font-medium tracking-tight text-text-display">
+              Three checks. One command.
+            </h2>
+            <ol className="mt-12 space-y-10">
+              <li className="flex gap-6">
+                <span className="font-mono text-[11px] font-bold text-accent mt-1 tracking-[0.06em]">
+                  01
+                </span>
                 <div>
-                  <p className="font-semibold">Freshness check</p>
-                  <p className="mt-1 text-muted text-sm leading-relaxed">
+                  <p className="font-body font-medium text-text-display">Freshness check</p>
+                  <p className="mt-2 text-sm text-text-secondary leading-relaxed">
                     Queries the npm registry for publish timestamps. Flags any dependency whose
                     latest version was pushed within the last 72 hours — the primary attack window.
                   </p>
                 </div>
               </li>
-              <li className="flex gap-5">
-                <span className="text-sm font-mono font-bold text-accent mt-0.5">02</span>
+              <li className="flex gap-6">
+                <span className="font-mono text-[11px] font-bold text-accent mt-1 tracking-[0.06em]">
+                  02
+                </span>
                 <div>
-                  <p className="font-semibold">Install script detection</p>
-                  <p className="mt-1 text-muted text-sm leading-relaxed">
+                  <p className="font-body font-medium text-text-display">Install script detection</p>
+                  <p className="mt-2 text-sm text-text-secondary leading-relaxed">
                     Scans every package in node_modules for preinstall, install, and postinstall
-                    hooks. New scripts are highlighted; allowlisted packages are de-emphasized.
+                    hooks. New scripts are highlighted. Allowlisted packages are de-emphasized.
                   </p>
                 </div>
               </li>
-              <li className="flex gap-5">
-                <span className="text-sm font-mono font-bold text-accent mt-0.5">03</span>
+              <li className="flex gap-6">
+                <span className="font-mono text-[11px] font-bold text-accent mt-1 tracking-[0.06em]">
+                  03
+                </span>
                 <div>
-                  <p className="font-semibold">Lockfile diff</p>
-                  <p className="mt-1 text-muted text-sm leading-relaxed">
+                  <p className="font-body font-medium text-text-display">Lockfile diff</p>
+                  <p className="mt-2 text-sm text-text-secondary leading-relaxed">
                     Snapshots your lockfile on first run. On subsequent runs, diffs the current state
                     against the baseline to surface added, removed, and bumped packages.
                   </p>
@@ -101,15 +111,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Install */}
-        <section className="px-6 py-20 border-t border-border">
+        {/* Install — Code blocks with copy */}
+        <section className="px-6 py-24 border-t border-border">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold tracking-tight">Get started</h2>
-            <div className="mt-8 space-y-4">
-              <CopyBlock code="npm install -g dep-trust" label="Install globally" />
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-4">
+              Get started
+            </p>
+            <h2 className="font-body text-2xl font-medium tracking-tight text-text-display mb-10">
+              One install. Zero configuration.
+            </h2>
+            <div className="space-y-6">
+              <CopyBlock code="npm install -g dep-trust" label="Install" />
               <CopyBlock
                 code={`dep-trust scan\ndep-trust scan --age 24\ndep-trust snapshot`}
-                label="Run a scan"
+                label="Usage"
               />
             </div>
           </div>
