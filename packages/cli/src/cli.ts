@@ -1,3 +1,5 @@
+import * as readline from 'node:readline'
+import pc from 'picocolors'
 import { addToAllowlist, listAllowlist } from './allowlist'
 import { formatScanResult } from './formatter'
 import { scan } from './scan'
@@ -71,17 +73,39 @@ async function main(): Promise<void> {
 
   switch (cli.command) {
     case 'scan': {
-      const result = await scan({
-        age: cli.age,
-        scripts: cli.scripts,
-        json: cli.json,
-        cwd,
-      })
+      let spinner: ReturnType<typeof setInterval> | undefined
+      if (!cli.json) {
+        const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
+        let i = 0
+        process.stdout.write('\\x1B[?25l')
+        spinner = setInterval(() => {
+          readline.cursorTo(process.stdout, 0)
+          process.stdout.write(`  ${pc.dim(frames[i++ % frames.length])} scanning dependencies...`)
+        }, 80)
+      }
 
-      if (cli.json) {
-        console.log(JSON.stringify(result, null, 2))
-      } else {
-        console.log(formatScanResult(result))
+      try {
+        const result = await scan({
+          age: cli.age,
+          scripts: cli.scripts,
+          json: cli.json,
+          cwd,
+        })
+
+        if (!cli.json) {
+          if (spinner) clearInterval(spinner)
+          readline.clearLine(process.stdout, 0)
+          readline.cursorTo(process.stdout, 0)
+          process.stdout.write('\\x1B[?25h')
+          console.log(formatScanResult(result))
+        } else {
+          console.log(JSON.stringify(result, null, 2))
+        }
+      } finally {
+        if (spinner) {
+          clearInterval(spinner)
+          process.stdout.write('\\x1B[?25h')
+        }
       }
       break
     }

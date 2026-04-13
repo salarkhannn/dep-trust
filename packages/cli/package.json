@@ -10,6 +10,7 @@
   "bin": {
     "dep-trust": "./dist/cli.js"
   },
+  "preferGlobal": true,
   "main": "./dist/scan.js",
   "types": "./dist/scan.d.ts",
   "exports": {
