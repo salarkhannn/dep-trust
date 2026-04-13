@@ -10,27 +10,31 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero — Primary layer: Doto display, one strong statement */}
-        <section className="px-6 pt-32 pb-24 max-w-3xl mx-auto">
-          <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-6">
-            npm supply chain protection
-          </p>
-          <h1 className="font-display text-5xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-text-display">
-            Know what your dependencies are doing.
-          </h1>
-          <p className="mt-8 text-lg text-text-secondary max-w-xl leading-relaxed">
-            dep-trust scans your npm dependency tree for supply chain attack indicators — recently
-            published packages, suspicious install scripts, and unexpected lockfile changes.
-          </p>
-          <div className="mt-10 flex items-center gap-6">
-            <a
-              href="https://github.com/salarkhannn/dep-trust"
-              className="inline-flex font-mono text-[13px] uppercase tracking-[0.06em] px-6 py-2.5 border border-border-visible text-text-primary rounded-full hover:text-text-display hover:border-text-display transition-colors duration-200"
-            >
-              View on GitHub
-            </a>
-          </div>
-          <div className="mt-16">
-            <Terminal />
+        <section className="px-6 pt-32 pb-24 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-text-secondary mb-6">
+                npm supply chain protection
+              </p>
+              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-text-display">
+                Know what your dependencies are doing.
+              </h1>
+              <p className="mt-8 text-lg text-text-secondary max-w-xl leading-relaxed">
+                dep-trust scans your npm dependency tree for supply chain attack indicators — recently
+                published packages, suspicious install scripts, and unexpected lockfile changes.
+              </p>
+              <div className="mt-10 flex items-center gap-6">
+                <a
+                  href="https://github.com/salarkhannn/dep-trust"
+                  className="inline-flex font-mono text-[13px] uppercase tracking-[0.06em] px-6 py-2.5 border border-border-visible text-text-primary rounded-full hover:text-text-display hover:border-text-display transition-colors duration-200"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+            <div className="mt-16 lg:mt-0 w-full">
+              <Terminal />
+            </div>
           </div>
         </section>
 
