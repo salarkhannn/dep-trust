@@ -1,0 +1,8 @@
+node_modules
+dist
+.dep-trust
+.next
+.vercel
+.env
+.env.*
+*.tsbuildinfo

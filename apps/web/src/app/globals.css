@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #0f0f0f;
+  --color-muted: #6b6b6b;
+  --color-border: #e5e5e5;
+  --color-accent: #b91c1c;
+  --color-accent-hover: #991b1b;
+  --color-terminal-bg: #1a1a1a;
+  --color-terminal-text: #d4d4d4;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}

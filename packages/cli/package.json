@@ -1,0 +1,37 @@
+{
+  "name": "dep-trust",
+  "version": "0.1.0",
+  "description": "Scan your npm dependencies for supply chain attack indicators.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "dep-trust": "./dist/cli.js"
+  },
+  "main": "./dist/scan.js",
+  "types": "./dist/scan.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/scan.js",
+      "types": "./dist/scan.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "node --import tsx --test src/__tests__/*.test.ts",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.0"
+  }
+}
