@@ -1,6 +1,6 @@
 {
   "name": "dep-trust",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scan your npm dependencies for supply chain attack indicators.",
   "license": "MIT",
   "type": "module",
@@ -24,6 +24,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "prepublishOnly": "pnpm build",
     "test": "node --import tsx --test src/__tests__/*.test.ts",
     "dev": "tsup --watch"
   },
